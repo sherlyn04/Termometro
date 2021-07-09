@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/Icono">
+        <file>Recursos/calor.png</file>
+    </qresource>
+</RCC>

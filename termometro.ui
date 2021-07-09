@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Termometro</class>
+ <widget class="QMainWindow" name="Termometro">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>573</width>
+    <height>355</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Termometro</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="Recursos.qrc">
+    <normaloff>:/Icono/Recursos/calor.png</normaloff>:/Icono/Recursos/calor.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QGroupBox" name="grpCent">
+      <property name="title">
+       <string>Centígrados </string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLCDNumber" name="outCent">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 0);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="cmdCent">
+         <property name="minimum">
+          <number>-273</number>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="grpFahr">
+      <property name="title">
+       <string>Fahrenheit</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLCDNumber" name="outFahr">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(170, 170, 255);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="cmdFahr">
+         <property name="minimum">
+          <number>-460</number>
+         </property>
+         <property name="maximum">
+          <number>212</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="grpKelvin">
+      <property name="title">
+       <string>Kelvin</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QLCDNumber" name="outKelvin">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(0, 170, 255);
+background-color: rgb(255, 170, 255);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDial" name="cmdKelvin">
+         <property name="minimum">
+          <number>0</number>
+         </property>
+         <property name="maximum">
+          <number>373</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>573</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="Recursos.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>cmdCent</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outCent</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>105</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>105</x>
+     <y>113</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdFahr</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outFahr</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>306</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>306</x>
+     <y>113</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cmdKelvin</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>outKelvin</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>655</x>
+     <y>283</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>655</x>
+     <y>131</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
